@@ -78,7 +78,9 @@ func main() {
 	*/
 
 	a := []int{0, 1, 2, 3, 4, 5}
-	b := a
+	//b := a
+	b := make([]int, 6) // This is making a new slice to avoid having b look at the same underlying array. Instead, it is a completely different array
+	copy(b, a)
 
 	fmt.Println("a ", a)
 	fmt.Println("b ", b)
